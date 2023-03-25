@@ -85,7 +85,8 @@ final public class RouterService {
         animation: Bool = false,
         transitionStyle: UIModalTransitionStyle = .coverVertical,
         presentationStyle: UIModalPresentationStyle = .fullScreen,
-        isSetCurrent: Bool = false
+        isSetCurrent: Bool = false,
+        completion: @escaping () -> Void
     ) {
         guard !(currentVC == nil) else { return }
         let presentVC: UIViewController
@@ -101,7 +102,8 @@ final public class RouterService {
             with: presentVC,
             with: animation,
             with: transitionStyle,
-            with: presentationStyle
+            with: presentationStyle,
+            completion: completion
         )
     }
     
